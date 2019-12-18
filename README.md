@@ -10,7 +10,7 @@ From a developer perspective, the application built on node,js tests out IBM’s
 perspective, the new and improved application allows a better user-experience at the retail-portion of the website.
 
 ### Dependencies:	
-This repository is a node.js template repository that IBM created to assist Marist students redesign a retail website.
+This [repository](https://github.com/dtt-projects/retail-app) is a node.js template repository that IBM created to assist Marist students redesign a retail website.
 The repository allows developers to use bootstrap to build a small, but scalable node.js server from existing code.
 IBM provides a suite of open-source tools and libraries such as the “express-generator”, which quickly creates an
 application skeleton, to eliminate tedious work so that developers can spend more on time on the application. IBM gave
@@ -20,6 +20,106 @@ to learn more about the repository's structure the application dependencies.
 
 # How to Deploy Your Application
 
+## Deploying the Application Locally
+
+NOTE: Having access to a bash-based shell that can use Git is important for this project. If you are on Windows, it is suggested to either install the Linux subsystem for Windows, which gives you access to a true Linux-based Bash shell, or Git Bash for a simulated Bash shell on Windows.
+
+### To install this project, you must first have the following items installed:
+
+1. Node.js and the Node Package Manager (NPM). Please select the LTS version, NOT the latest version.
+2. Git SCM (Note: Mac users may have to install XCode first)
+3. Docker 
+
+### Commands to verify installations:
+
+	```
+	npm -v
+	node -v
+	git --version 
+	docker ps
+	```
+### Starting a Server
+	
+	```
+	cd retail app
+	npm install nodemon
+	npm run start
+	```
+You should see the following output:
+
+```
+[nodemon] 1.19.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www`
+Begin server deployment Node.js script...
+Free port captured: 3000. Normalizing for 'Express' object use.
+Port successfully set to  3000
+Server instance created.
+Server successfully started on port  3000
+Website active on: http://localhost:3000
+From here, you can copy and paste the website link to your browser to view the website! In this particular example, you'd navigate to http://localhost:3000. When running in development mode, the port is always 3000.
+```
+
+### Running the Application
+
+	```
+	0.0.0.:30000
+	```
+
+To kill a development server, simply type CTRL+c on your keyboard in the terminal running the node process. This will kill the server immediately
+
+### Containerizing Cloned Application on your Local Environment 
+
+1. Enter into the etail-app repository
+
+	```
+	cd retail-app
+	```
+
+2. Create empty file called Dockerfile
+
+	```
+	touch Dockerfile
+	```
+
+3. Copy and paste contents within the file from the Dockerfile found in this repository 
+	- Save and quit by Esc, and entering :wq!
+
+4. Create empty file called .dockerignore
+
+	```
+	touch .dockerignore
+	```
+
+5. Copy and paste contents within the file from the .dockerignore found in this repository 
+	- Save and quit by Esc, and entering :wq!
+
+6. Build the image
+
+	```
+	docker build -t fedbrunp/node-web-app .
+	```
+
+7. Verify docker image has been created
+	
+	```
+	docker images 
+	```
+
+8. Run the image 
+
+	```
+	docker run -p 49160:3000 -d fedbrunp/node-web-app
+	```
+
+9. Test the site by entering into your browser
+
+	```
+	0.0.0.0:49160
+	```
+
+### Running the Applicaiton via the VM instance on Google Cloud Platform 
 Accessing the VM instance on Google Cloud Environment through the terminal on your device:
 
 Must be on Marist’s network to connect to the VM. If not, VPN into the Marist Network using Cisco Any Connect, which you can download [here](https://v1.marist.edu/+CSCOE+/logon.html#form_title_text). Note: After entering your Marist credentials, select 'Tunnel-All'.
@@ -39,13 +139,9 @@ Enter in your browswer:
 
 	35.245.170.116:30000 or 35.245.170.116:49160 
 
-# Architecture Diagram
-
-### Local cloud development
+# Node.js Container Architecture Diagram
 
 ![nodejscontainer](https://technology.amis.nl/wp-content/uploads/2017/05/image-56-702x336.png)
-	
-### Cloud Deployment
 	
 
 # IBM API REST SERVICES 
