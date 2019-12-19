@@ -1,4 +1,4 @@
-<img src="https://sproutcreekfarm.org/sites/default/files/events/images/Sprout%20Creek%20Farm%20Logo%20Emblem.jpg" alt="Sprout Creek Farm">
+<img src="https://sproutcreekfarm.org/sites/default/files/events/images/Sprout%20Creek%20Farm%20Logo%20Emblem.jpg" alt="Sprout Creek Farm" width="500" height="500">
 
 
 <h1> About Sprout Creek Farm </h1> 
